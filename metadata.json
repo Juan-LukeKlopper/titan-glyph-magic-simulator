@@ -1,0 +1,11 @@
+{
+  "name": "Titan's Glyph Grimoire",
+  "description": "A gesture-based simulator of the Titan glyph magic system: a deterministic point-cloud gesture recognizer, WebGL shader spell bursts over a 60 FPS canvas simulation, a combinatory spellbook, and runtime Web Audio synthesis. Fully client-side, with no backend, accounts, or network calls.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "gesture-recognition",
+    "webgl-shader-effects",
+    "procedural-effects",
+    "web-audio-synthesis"
+  ]
+}
