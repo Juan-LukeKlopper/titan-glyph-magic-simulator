@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "EB Garamond", serif;
+  --font-display: "Cinzel", serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Custom gorgeous fantasy scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(30, 19, 38, 0.4);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(217, 119, 6, 0.3);
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(217, 119, 6, 0.6);
+}
+
+/* Respect prefers-reduced-motion: silence ambient/looping UI animations.
+   Canvas FX stay; they are user-initiated feedback. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse,
+  .animate-ping,
+  .animate-spin,
+  .animate-spin-slow,
+  .animate-pulse-subtle {
+    animation: none;
+  }
+}
+
+/* Invisibility shroud: while active, every UI chrome element fades out so only
+   the breath gauge remains on screen, then fades back in when the shroud drops.
+   MagicCanvas toggles `body[data-shroud='active']`. */
+[data-chrome] {
+  transition: opacity 500ms ease;
+}
+body[data-shroud='active'] [data-chrome] {
+  opacity: 0;
+  pointer-events: none;
+}
+body[data-shroud='active'] [data-shroud-surface] {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
