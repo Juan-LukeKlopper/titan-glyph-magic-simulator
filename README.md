@@ -133,14 +133,7 @@ src/
 
 ## Deployment
 
-The production build in `dist/` is fully static, so any static host works. This
-repository ships two GitHub Actions workflows:
-
-- `ci.yml` runs lint, typecheck, test, and build on every push and pull request.
-- `deploy.yml` publishes `dist/` to GitHub Pages on push to `main`, setting
-  `VITE_BASE_PATH=/<repo>/` so assets resolve under the project URL.
-
-For other hosts:
+The production build in `dist/` is fully static, so any static host works.
 
 - **Netlify / Vercel:** set the publish directory to `dist` and the build
   command to `npm run build`.
